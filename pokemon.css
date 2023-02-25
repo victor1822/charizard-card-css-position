@@ -1,0 +1,171 @@
+:root {
+  --default-blue: rgb(55, 55, 176);
+  --default-yellow: rgb(231, 231, 85);
+  --default-white: white;
+  --default-border-radius: 15px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: initial;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+  font-family: Roboto, sans-serif;
+  font-weight: normal;
+  color: white;
+}
+
+
+body .card-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+body .card-wrapper .card-content {
+  height: 500px;
+  width: 300px;
+  position: relative;
+}
+
+body .card-wrapper .card-content .card-back,
+body .card-wrapper .card-content .card-front {
+  transition: 0.7s;
+}
+
+body .card-wrapper .card-content .card-back {
+  transform: rotateY(180deg);
+}
+
+body .card-wrapper .card-content:hover .card-back {
+  transform: rotateY(0deg);
+}
+
+body .card-wrapper .card-content:hover .card-front {
+  transform: rotateY(180deg);
+}
+
+body .card-wrapper .card-content:hover .card-back {
+  z-index: 0;
+}
+
+body .card-wrapper .card-content:hover .card-front {
+  z-index: -1;
+}
+
+body .card-wrapper .card-content .card-back {
+  height: 500px;
+  width: 300px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+body .card-wrapper .card-content div[class^='card-'] {
+  display: flex;
+  height: 500px;
+  width: 300px;
+  border-radius: var(--default-border-radius);
+  border: 6px solid var(--default-yellow);
+  box-sizing: border-box;
+}
+
+body .card-wrapper .card-content .card-front {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+  width: 300px;
+  background-color: var(--default-blue);
+}
+
+body .card-wrapper .card-content .card-front > img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 136px;
+  height: 136px;
+}
+
+body .card-wrapper .card-content .card-back {
+  display: flex;
+  flex-direction: column;
+}
+
+body .card-wrapper .card-content .card-back header {
+  box-sizing: border-box;
+  display: flex;
+  height: 60px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+  column-gap: 9px;
+  background-color: var(--default-blue);
+  border-radius: 11px 11px 0 0;
+}
+
+body .card-wrapper .card-content .card-back header .previous-evolution {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+body .card-wrapper .card-content .card-back header .previous-evolution > img {
+  width: 45px;
+  height: 45px;
+  background-color: var(--default-yellow);
+  border-radius: 50%;
+}
+
+body .card-wrapper .card-content .card-back header .previous-evolution > h3 {
+  font-size: 12px;
+  width: 43px;
+  margin: 0;
+  font-weight: bold;
+  position: absolute;
+  top: -20%;
+  left: 50%;
+  transform: translateX(-50%);
+} 
+
+body .card-wrapper .card-content .card-back header > h1 {
+  font-size: 24px;
+}
+
+body .card-wrapper .card-content .card-back header > img {
+  width: 30px;
+  height: 30px;
+  background-color: var(--default-yellow);
+  border-radius: 50%;
+  padding: 8px;
+}
+
+body .card-wrapper .card-content .card-back > img {
+  width: 100%;
+  height: 200px;
+  background-position: center center;
+  background-size: cover;
+}
+
+body .card-wrapper .card-content .card-back footer {
+  background-color: var(--default-blue);
+  display: flex;
+  flex: 1;
+  border-radius: 0 0 11px 11px;
+  padding: 15px 15px;
+}
